@@ -4,7 +4,10 @@ project(mujoco_sim_ros2)
 set(CMAKE_POLICY_DEFAULT_CMP0072 NEW)
 
 if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+  add_compile_options(-Wall -Wextra -Wpedantic
+    -Wno-unused-parameter
+    -Wno-missing-field-initializers
+    -Wno-sign-compare)
 endif ()
 
 # download dependencies
